@@ -9,8 +9,6 @@ backupIFS=$IFS
 dotFileName=".rsync-backup"
 dotFilePath="$HOME/$dotFileName"
 
-echo $dotFilePath
-
 if [ ! -f "$dotFilePath" ]; then
     echo "" > "$dotFilePath"
 fi
