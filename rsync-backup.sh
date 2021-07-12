@@ -26,12 +26,10 @@ do
     echo $arg;
     case $arg in
         "-b" | "--backup")
-            echo "Backup selected"
             doBackup=true
             doRestore=false
             ;;
         "-r" | "--restore")
-            echo "Restore selected"
             doRestore=true
             doBackup=false
             ;;
