@@ -3,6 +3,9 @@
 ###
 # This script reads from ~.rsync-backup to identify paths to sync using rsync
 # You can use this to backup specific directories to an external location (such as an external hard drive)
+# To use, create a file ~/.rsync-backup. Each line in this file should be in the form [path_to_source]:[path_to_backup]
+# The paths may contain spaces. Then when you run "rsync-backup.sh -b" it should backup from source to destination.
+# To restore, use "rsync-backup.sh -r" See the case statement below for all the options.
 ###
 
 # At the end of the script, we want to reset the IFS to whatever it was before
