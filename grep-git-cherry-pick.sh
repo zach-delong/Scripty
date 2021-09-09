@@ -17,10 +17,8 @@ fi
 while read hash;
 do
     echo "Attempting to pick $hash"
-
-    git cherry-pick -m1 $hash
-
     echo $hash >> $alreadyPickedTmpFile
+    git cherry-pick -m1 $hash
 
 done < $commitHashOnlyTmpFile
 
