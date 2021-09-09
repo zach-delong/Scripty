@@ -1,8 +1,11 @@
 logOutputTmpFile="tmp.txt"
 commitHashOnlyTmpFile="tmp2.txt"
 
+branchName=${1-origin/master} # The name of the branch we should look at when
+# logging
+
 # Using the other script in this repo, grab the commits we care about
-grep-git-log.sh < /dev/stdin > $logOutputTmpFile
+grep-git-log.sh $branchName < /dev/stdin > $logOutputTmpFile
 
 # Grab only the hashes from that output
 awk -F" " '{ print $1 }' $logOutputTmpFile > $commitHashOnlyTmpFile
