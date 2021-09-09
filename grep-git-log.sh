@@ -8,7 +8,7 @@ branchName=${1-origin/master} # The name of the branch we should look at when
 # grep pattern if multiple are passed in, so we should get what we want from
 # essentially concatenating them all together!
 
-stringSearchPatterns=$(awk '{ print " --grep " $0 }' /dev/stdin)
+stringSearchPatterns=$(awk '{ print " --grep " $1 }' /dev/stdin)
 
 gitLogCommand="git log $branchName --oneline --first-parent $stringSearchPatterns"
 
